@@ -1,0 +1,114 @@
+local function ShowMenu(player)
+    local menuFrame = Instance.new("Frame")
+    menuFrame.Size = UDim2.new(0.3, 0, 0.4, 0)
+    menuFrame.Position = UDim2.new(0.35, 0, 0.3, 0)
+    menuFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+    menuFrame.BackgroundTransparency = 0.65
+    menuFrame.Parent = player.PlayerGui
+
+    local titleLabel = Instance.new("TextLabel")
+    titleLabel.Size = UDim2.new(1, 0, 0.2, 0)
+    titleLabel.Position = UDim2.new(0, 0, 0, 0)
+    titleLabel.Text = "Меню"
+    titleLabel.Font = Enum.Font.SourceSans
+    titleLabel.TextSize = 24
+    titleLabel.TextColor3 = Color3.new(1, 1, 1)
+    titleLabel.Parent = menuFrame
+
+    local settingsButton = Instance.new("TextButton")
+    settingsButton.Size = UDim2.new(0.8, 0, 0.15, 0)
+    settingsButton.Position = UDim2.new(0.1, 0, 0.3, 0)
+    settingsButton.Text = "Настройки"
+    settingsButton.Font = Enum.Font.SourceSans
+    settingsButton.TextSize = 20
+    settingsButton.TextColor3 = Color3.new(1, 1, 1)
+    settingsButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    settingsButton.MouseButton1Click:Connect(function()
+        ShowSettingsMenu(player)
+    end)
+    settingsButton.Parent = menuFrame
+
+    local shopButton = Instance.new("TextButton")
+    shopButton.Size = UDim2.new(0.8, 0, 0.15, 0)
+    shopButton.Position = UDim2.new(0.1, 0, 0.5, 0)
+    shopButton.Text = "Магазин"
+    shopButton.Font = Enum.Font.SourceSans
+    shopButton.TextSize = 20
+    shopButton.TextColor3 = Color3.new(1, 1, 1)
+    shopButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    shopButton.MouseButton1Click:Connect(function()
+        ShowShopMenu(player)
+    end)
+    shopButton.Parent = menuFrame
+
+    local closeButton = Instance.new("TextButton")
+    closeButton.Size = UDim2.new(0.5, 0, 0.15, 0)
+    closeButton.Position = UDim2.new(0.25, 0, 0.75, 0)
+    closeButton.Text = "Закрыть"
+    closeButton.Font = Enum.Font.SourceSans
+    closeButton.TextSize = 20
+    closeButton.TextColor3 = Color3.new(1, 1, 1)
+    closeButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    closeButton.MouseButton1Click:Connect(function()
+        menuFrame:Destroy()
+    end)
+    closeButton.Parent = menuFrame
+end
+
+local function ShowSettingsMenu(player)
+    local settingsFrame = Instance.new("Frame")
+    settingsFrame.Size = UDim2.new(0.5, 0, 0.5, 0)
+    settingsFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
+    settingsFrame.BackgroundColor3 = Color3.fromRGB(148, 0, 211) -- Фиолетовый цвет
+    settingsFrame.BackgroundTransparency = 0.55 -- Прозрачность 55%
+    settingsFrame.Parent = player.PlayerGui
+
+    local sensitivityLabel = Instance.new("TextLabel")
+    sensitivityLabel.Size = UDim2.new(1, 0, 0.2, 0)
+    sensitivityLabel.Position = UDim2.new(0, 0, 0, 0)
+    sensitivityLabel.Text = "Чувствительность скорости мыши:"
+    sensitivityLabel.Font = Enum.Font.SourceSans
+    sensitivityLabel.TextSize = 20
+    sensitivityLabel.TextColor3 = Color3.new(1, 1, 1)
+    sensitivityLabel.Parent = settingsFrame
+
+    local sensitivitySlider = Instance.new("TextButton")
+    sensitivitySlider.Size = UDim2.new(0.8, 0, 0.1, 0)
+    sensitivitySlider.Position = UDim2.new(0.1, 0, 0.3, 0)
+    sensitivitySlider.Text = "Настройка слайдера"
+    sensitivitySlider.Font = Enum.Font.SourceSans
+    sensitivitySlider.TextSize = 20
+    sensitivitySlider.TextColor3 = Color3.new(1, 1, 1)
+    sensitivitySlider.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    sensitivitySlider.MouseButton1Click:Connect(function()
+        -- Добавьте код для настройки чувствительности мыши
+    end)
+    sensitivitySlider.Parent = settingsFrame
+
+    -- Добавьте другие настройки, если нужно
+end
+
+local function ShowShopMenu(player)
+    local shopFrame = Instance.new("Frame")
+    shopFrame.Size = UDim2.new(0.5, 0, 0.5, 0)
+    shopFrame.Position = UDim2.new(0.25, 0, 0.25, 0)
+    shopFrame.BackgroundColor3 = Color3.fromRGB(148, 0, 211) -- Фиолетовый цвет
+    shopFrame.BackgroundTransparency = 0.55 -- Прозрачность 55%
+    shopFrame.Parent = player.PlayerGui
+
+    local swordButton = Instance.new("TextButton")
+    swordButton.Size = UDim2.new(0.8, 0, 0.1, 0)
+    swordButton.Position = UDim2.new(0.1, 0, 0.1, 0)
+    swordButton.Text = "Меч (1 урон)"
+    swordButton.Font = Enum.Font.SourceSans
+    swordButton.TextSize = 20
+    swordButton.TextColor3 = Color3.new(1, 1, 1)
+    swordButton.BackgroundColor3 = Color3.new(0.5, 0.5, 0.5)
+    swordButton.MouseButton1Click:Connect(function()
+        -- Добавьте код для покупки меча
+    end)
+    swordButton.Parent = shopFrame
+
+    local regenPotionButton = Instance.new("TextButton")
+    regenPotionButton.Size = UDim2.new(0.8, 0, 0.1, 0)
+    regenPotionButton.Position = UDim2.new(0.1, 0, 0.3, 0)
